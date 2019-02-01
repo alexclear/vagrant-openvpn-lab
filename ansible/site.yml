@@ -3,6 +3,7 @@
   roles:
   - role: etckeeper
   - role: common-utils
+  - role: openvpn-otp-plugin
   - role: stouts.openvpn
     openvpn_enabled: yes
     openvpn_server: 10.95.1.0 255.255.255.0
@@ -15,12 +16,15 @@
     openvpn_port: 1195
     openvpn_client_options:
       - "tls-client"
-    openvpn_server_options:
-      - "tls-server"
+      - "auth-user-pass"
+      - "auth-nocache"
+      - "reneg-sec 0"
     openvpn_unified_client_profiles: yes
     openvpn_tls_auth: true
     openvpn_clients:
       - test-client-1
     openvpn_ifconfig_pool_persist: "ipp.txt"
     openvpn_server_options:
+      - "plugin /usr/lib/openvpn/openvpn-otp.so"
+      - "reneg-sec 0"
       - "push \"route 172.16.137.92 255.255.255.255\""
