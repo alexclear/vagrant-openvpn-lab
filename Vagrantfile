@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
     ovpn1.vm.box = "ubuntu/xenial64"
     ovpn1.vm.hostname = "ovpn1"
     ovpn1.vm.network "private_network", ip: $OVPN1_IP
+    ovpn1.vm.network "forwarded_port", guest: 1195, host: 1195
 
     ovpn1.vm.provider :virtualbox do |v, override|
       v.gui = false

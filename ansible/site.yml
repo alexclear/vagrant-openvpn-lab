@@ -11,6 +11,8 @@
     openvpn_key_org: test
     openvpn_key_email: admin@example.com
     openvpn_use_pam: no
+    openvpn_proto: tcp
+    openvpn_port: 1195
     openvpn_client_options:
       - "tls-client"
     openvpn_server_options:
