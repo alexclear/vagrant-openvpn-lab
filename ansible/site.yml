@@ -1,0 +1,24 @@
+- hosts: ovpn-server
+  become: yes
+  roles:
+  - role: etckeeper
+  - role: common-utils
+  - role: stouts.openvpn
+    openvpn_enabled: yes
+    openvpn_server: 10.95.1.0 255.255.255.0
+    openvpn_use_system_easyrsa: true
+    openvpn_comp_lzo: yes
+    openvpn_key_org: test
+    openvpn_key_email: admin@example.com
+    openvpn_use_pam: no
+    openvpn_client_options:
+      - "tls-client"
+    openvpn_server_options:
+      - "tls-server"
+    openvpn_unified_client_profiles: yes
+    openvpn_tls_auth: true
+    openvpn_clients:
+      - test-client-1
+    openvpn_ifconfig_pool_persist: "ipp.txt"
+    openvpn_server_options:
+      - "push \"route 172.16.137.92 255.255.255.255\""
