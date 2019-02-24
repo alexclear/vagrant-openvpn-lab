@@ -6,7 +6,7 @@
 	url = https://github.com/kofonfor/ansible-role-common-utils.git
 [submodule "ansible/roles/stouts.openvpn"]
 	path = ansible/roles/stouts.openvpn
-	url = https://github.com/Stouts/Stouts.openvpn.git
+	url = https://github.com/kofonfor/Stouts.openvpn.git
 [submodule "ansible/roles/openvpn-otp-plugin"]
 	path = ansible/roles/openvpn-otp-plugin
 	url = https://github.com/kofonfor/ansible-role-openvpn-otp-plugin.git
